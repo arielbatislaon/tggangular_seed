@@ -1,0 +1,70 @@
+<!doctype html>
+<html data-ng-app="tggapp" ng-strict-di>
+<head lang="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8">
+<title>Your Apps Name</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/ng-grid-bower/ng-grid.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <!-- injector:css -->
+    <link rel="stylesheet" href="/styles/main.css">
+    <!-- endinjector -->
+    <!-- endbuild -->
+  </head>
+  <body class="container-fluid" ng-controller="mainController as mainCtrl" >
+<div class="panel-primary"  >
+<div class="panel-heading" style="background: url(images/header_tggapps.png) no-repeat;height:80px">
+<span style="float: right;color: #333;font-size: 18px;" ng-if="mainCtrl.alreadyLoggedIn">User:<i>{{mainCtrl.userName}}</i></span>
+		 </div>
+<div class="panel-heading" style="height:5%">Your Apps Name(Your Apps IdName) <div style="float:right;position:relative;top:-8px;right:300px;" ng-if="mainCtrl.alreadyLoggedIn">
+		<button class="btn btn-success" ng-click="mainCtrl.submit()" ng-disabled="!mainCtrl.isDocModified()"  >Submit Change</button>
+		</div>
+		 <div style="float:right;position:relative;top:-8px;" ng-if="mainCtrl.alreadyLoggedIn">
+		<button class="btn btn-danger" ng-click="mainCtrl.appsLogout()">Logout</button>
+		</div>
+		</div>
+		
+	<div class="panel-body"  style="height:79%" ui-view>
+	</div>
+</div>
+<div class="panel-footer" style="position:absolute;bottom:0px;width:100%;height:7%">
+	<div style="margin:auto;width:27%">Your Apps ID Name Version xx.0 The Good Guys ©2015</div>
+</div>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/ng-grid-bower/ng-grid.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-ngMask/dist/ngMask.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+            <!-- injector:js -->
+            <script src="/main/mainModule.js"></script>
+            <script src="/main/mainConfigRoute.js"></script>
+            <script src="/main/mainController.js"></script>
+            <script src="/components/core/coreController.js"></script>
+            <script src="/components/login/loginController.js"></script>
+            <script src="/components/login/loginService.js"></script>
+            <script src="/shared/JSONRESTService.js"></script>
+            <script src="/shared/appsLoadingMessageController.js"></script>
+            <!-- endinjector -->
+
+        <!-- endbuild -->
+</body>
+</html>

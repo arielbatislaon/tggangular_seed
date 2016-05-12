@@ -1,0 +1,22 @@
+    <form class="form-horizontal" role="form" style="width:270px;height:150px;	position:absolute;left:50%;top:50%;margin:-75px 0 0 -135px;" ng-submit="loginCtrl.appsLogin()">
+      <div class="form-group">
+        <label for="inputName3" class="col-sm-2 control-label" style="white-space:nowrap">User Name</label>
+        <div class="col-sm-4" style="margin-left:30px;">
+          <input class="form-control" id="inputName3" placeholder="User Name" style="width:200px;" ng-model="loginCtrl.credential.userName">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label" style="white-space:nowrap">Password</label>
+        <div class="col-sm-4" style="margin-left:30px;">
+          <input class="form-control" id="inputPassword3" placeholder="Password" style="width:200px;" type="password" ng-model="loginCtrl.credential.password">
+        </div>
+      </div>
+	  <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-success" id="loginbtn" >Login</button>
+          <div class="alert alert-warning alert-dismissible" role="alert" ng-if="loginCtrl.loginFailed" style="position:absolute;margin:auto">
+  				<strong>Login Failed!</strong> Your user name or password is invalid or your token has expired. <br>Please login with correct user name and password.
+			</div>
+        </div>
+      </div>
+    </form>
